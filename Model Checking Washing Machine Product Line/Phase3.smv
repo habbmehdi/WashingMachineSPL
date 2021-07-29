@@ -1,0 +1,20 @@
+
+MODULE main
+VAR
+states : {}; --to be edited
+ASSIGN 
+    init(states) := Locking;
+    next(states) := 
+        case
+            -- states = Locking : {}; to be edited
+            -- states = Waiting : {}; to be edited
+            -- states = Washing : {}; to be edited
+            -- states = Drying : {}; to be edited
+            -- states = Unlocking : {}; to be edited
+        esac;
+
+DEFINE
+    wash := states = Washing;
+    unl := states = Unlocking;
+
+LTLSPEC (X wash) -> ( X (X unl))
